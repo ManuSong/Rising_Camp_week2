@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_btm"
+        android:enabled="true"
+        android:icon="@drawable/btm_img_01"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/pay_btm"
+        android:enabled="true"
+        android:icon="@drawable/btm_img_02"
+        android:title="Pay"/>
+
+    <item
+        android:id="@+id/order_btm"
+        android:enabled="true"
+        android:icon="@drawable/btm_img_03"
+        android:title="order"/>
+
+    <item
+        android:id="@+id/gift_btm"
+        android:enabled="true"
+        android:icon="@drawable/btm_img_04"
+        android:title="Gift"/>
+
+    <item
+        android:id="@+id/other_btm"
+        android:enabled="true"
+        android:icon="@drawable/btm_img_05"
+        android:title="Other"/>
+
+</menu>

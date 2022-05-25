@@ -1,11 +1,16 @@
 package com.risingcamp.manu.starbucksmainactivity
 
 import android.Manifest
+import android.content.DialogInterface
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.GiftFragment
 import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.HomeFragement
@@ -54,7 +59,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeFragment(fragment: Fragment) {
-
         supportFragmentManager.beginTransaction()
             .replace(binding.container.id, fragment)
             .commit()
@@ -62,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
 
     // Location Permission 확인! onStart에서
-    @RequiresApi(Build.VERSION_CODES.N)
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onStart() {
         super.onStart()
         val locationPermissionRequest = registerForActivityResult(
@@ -76,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                     // Only approximate location access granted.
                 } else -> {
                 // No location access granted.
+                permissions.getOrDefault(Manifest.permission.ACCESS_BACKGROUND_LOCATION, false)
             }
             }
         }
@@ -90,6 +95,35 @@ class MainActivity : AppCompatActivity() {
             Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_BACKGROUND_LOCATION
         ))
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    //restoreState로 현재 상태 복구
+    override fun onResume() {
+        super.onResume()
+
+    }
+
+
+    private fun AlertDialogTest() {
+        val bulider = AlertDialog.Builder(this)
+
+        bulider.setTitle("앱을 종료하시겠습니까?")
+            .setMessage("종료를 원하시면 아래 종료 버튼을 유지하고 싶으시다면 아니요 버튼을 눌러주세요!")
+            .setPositiveButton("종료", DialogInterface.OnClickListener{dialog, id ->
+                ActivityCompat.finishAffinity(this)
+                System.exit(0)
+            }).setNegativeButton("아니요", DialogInterface.OnClickListener{dialog, id ->
+
+            })
+
+        val alertDialog = bulider.create()
+
+        alertDialog.show()
     }
 }
 

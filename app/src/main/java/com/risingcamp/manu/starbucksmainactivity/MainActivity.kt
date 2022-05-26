@@ -2,6 +2,7 @@ package com.risingcamp.manu.starbucksmainactivity
 
 import android.Manifest
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,10 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.GiftFragment
-import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.HomeFragement
-import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.OrderFragment
-import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.OtherFragment
+import com.risingcamp.manu.starbucksmainactivity.FragmentBtmNavi.*
 import com.risingcamp.manu.starbucksmainactivity.databinding.ActivityMainBinding
 
 private lateinit var binding : ActivityMainBinding
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.pay_btm -> {
-                        changeFragment(OrderFragment())
+                        changeFragment(PayFragement())
                     }
 
                     R.id.gift_btm -> {
@@ -98,27 +96,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
 
-    //restoreState로 현재 상태 복구
-    override fun onResume() {
-        super.onResume()
-
-    }
 
 
     private fun AlertDialogTest() {
         val bulider = AlertDialog.Builder(this)
 
-        bulider.setTitle("앱을 종료하시겠습니까?")
-            .setMessage("종료를 원하시면 아래 종료 버튼을 유지하고 싶으시다면 아니요 버튼을 눌러주세요!")
-            .setPositiveButton("종료", DialogInterface.OnClickListener{dialog, id ->
+        bulider.setTitle("실행")
+            .setMessage("다시 돌아온 것을 환영합니다.")
+            .setPositiveButton("앱 종료", DialogInterface.OnClickListener{dialog, id ->
                 ActivityCompat.finishAffinity(this)
                 System.exit(0)
             }).setNegativeButton("아니요", DialogInterface.OnClickListener{dialog, id ->
-
             })
 
         val alertDialog = bulider.create()

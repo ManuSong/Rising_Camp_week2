@@ -25,9 +25,9 @@ class HomeFragement : Fragment() {
         val signup = mBinding.signup
         login.apply {
             setOnClickListener {
-                startActivity(
-                    Intent(context, LoginActivity::class.java)
-                )
+                val intent = Intent(context, LoginActivity::class.java)
+                intent.putExtra("data_test", "Android A반 화이팅")
+                startActivity(intent)
             }
         }
 

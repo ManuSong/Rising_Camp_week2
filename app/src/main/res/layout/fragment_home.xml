@@ -48,7 +48,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:elevation="8dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:background="@drawable/starbucks_box_bg">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,14 +59,14 @@
                             android:id="@+id/signup_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:lineSpacingExtra="2dp"
-                            android:text="스타벅스 리워드 회원\n신규가입 첫 구매 시,\n무료음료 혜택을 드려요!"
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="30dp"
-                            android:textSize="17dp"
+                            android:lineSpacingExtra="2dp"
+                            android:text="스타벅스 리워드 회원\n신규가입 첫 구매 시,\n무료음료 혜택을 드려요!"
                             android:textColor="@color/black"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            android:textSize="17dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                         <Button
@@ -75,14 +75,14 @@
                             android:layout_height="35dp"
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/btn_bg"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:text="회원가입"
                             android:textColor="@color/white"
                             android:textSize="18dp"
-                            android:focusable="true"
-                            android:clickable="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/signup_info"
-                            app:layout_constraintBottom_toBottomOf="parent"
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <Button
@@ -91,33 +91,27 @@
                             android:layout_height="35dp"
                             android:layout_marginLeft="10dp"
                             android:background="@drawable/btn_bg_nobg"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:text="로그인"
                             android:textColor="#3CB371"
-                            android:focusable="true"
-                            android:clickable="true"
                             android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@id/signup"
                             app:layout_constraintTop_toBottomOf="@+id/signup_info"
-                            app:layout_constraintBottom_toBottomOf="parent"
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
                             android:src="@drawable/cup_img"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginBottom="5dp"/>
-
-
-
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
                 </FrameLayout>
@@ -130,7 +124,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:src="@drawable/letter_img"
-                    android:layout_marginLeft="23dp"/>
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,7 +134,8 @@
                     app:layout_constraintStart_toEndOf="@+id/letter_img"
                     app:layout_constraintTop_toBottomOf="@+id/login_frame"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:textSize="16dp"/>
+                    android:textSize="16dp"
+                    android:layout_marginTop="10dp"/>
 
                 <ImageView
                     android:id="@+id/bell_img"
@@ -150,7 +146,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:src="@drawable/bell_img"
                     android:scaleType="fitXY"
-                    android:layout_marginRight="23dp"/>
+                    android:layout_marginRight="23dp"
+                    android:layout_marginTop="10dp"/>
 
 
 
@@ -164,5 +161,16 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/delivery_btn_resize"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        android:scaleType="center"
+        android:background="@drawable/home_btn_delivery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

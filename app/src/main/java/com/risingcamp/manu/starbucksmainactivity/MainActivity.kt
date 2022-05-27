@@ -64,22 +64,22 @@ class MainActivity : AppCompatActivity() {
 
 
     // Location Permission 확인! onStart에서
-    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onStart() {
         super.onStart()
         val locationPermissionRequest = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { permissions ->
-            when {
-                permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
-                    // Precise location access granted.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                when {
+                    permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
+                        // Precise location access granted.
+                    }
+                    permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
+                        // Only approximate location access granted.
+                    } else -> {
+                    // No location access granted.
                 }
-                permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
-                    // Only approximate location access granted.
-                } else -> {
-                // No location access granted.
-                permissions.getOrDefault(Manifest.permission.ACCESS_BACKGROUND_LOCATION, false)
-            }
+                }
             }
         }
 
@@ -90,10 +90,7 @@ class MainActivity : AppCompatActivity() {
 // rationale dialog. For more details, see Request permissions.
         locationPermissionRequest.launch(arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_BACKGROUND_LOCATION
-        ))
-
+            Manifest.permission.ACCESS_COARSE_LOCATION))
     }
 
 

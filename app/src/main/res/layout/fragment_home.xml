@@ -156,6 +156,114 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@drawable/precuncey_img"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@drawable/starbucks_ad_img" />
+
+            <HorizontalScrollView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ice_ame_img"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/americano_img"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="18dp"/>
+
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/number_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="@color/starbucks_color_light"
+                            android:textSize="30dp"
+                            app:layout_constraintTop_toBottomOf="@+id/ice_ame_img"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginLeft="18dp"/>
+
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="아이스 카페\n 아메리카노"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toEndOf="@+id/number_text"
+                            app:layout_constraintTop_toBottomOf="@id/ice_ame_img"
+                            android:layout_marginLeft="20dp"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/esspress_img"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/esspresso_img"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginLeft="18dp"/>
+
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/numbertwo_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+                            android:textColor="@color/starbucks_color_light"
+                            android:textSize="30dp"
+                            app:layout_constraintTop_toBottomOf="@+id/esspress_img"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginLeft="18dp"/>
+
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="에스프레소"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toEndOf="@+id/numbertwo_text"
+                            app:layout_constraintTop_toBottomOf="@id/esspress_img"
+                            android:layout_marginLeft="20dp"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            </HorizontalScrollView>
+
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -163,6 +271,7 @@
     </ScrollView>
 
     <ImageButton
+        android:id="@+id/home_delivery_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/delivery_btn_resize"

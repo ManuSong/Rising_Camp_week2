@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (data != null) {
             Log.d("testt", data)
+            binding.idText.setText(data)
         }
 
         signupLogin.apply {

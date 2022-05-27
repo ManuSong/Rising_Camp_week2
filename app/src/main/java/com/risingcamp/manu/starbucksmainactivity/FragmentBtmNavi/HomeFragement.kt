@@ -23,10 +23,12 @@ class HomeFragement : Fragment() {
 
         val login = mBinding.login
         val signup = mBinding.signup
+        val deliveryBtn = mBinding.homeDeliveryBtn
+
         login.apply {
             setOnClickListener {
                 val intent = Intent(context, LoginActivity::class.java)
-                intent.putExtra("data_test", "Android A반 화이팅")
+                intent.putExtra("data_test", "AndroidA반화이팅")
                 startActivity(intent)
             }
         }
@@ -40,8 +42,19 @@ class HomeFragement : Fragment() {
             }
         }
 
+        deliveryBtn.apply {
+            setOnClickListener {
+                startActivity(
+                    Intent(context, LoginActivity::class.java)
+                )
+            }
+        }
+
         return mBinding.root
+
+
     }
+
 
 
     }
